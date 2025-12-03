@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\Harshasla\\.gradle\\daemon\\8.4\\com.healthapp-merged_res-55:\\xml_file_paths.xml.flat",
+        "source": "C:\\Users\\Harshasla\\.gradle\\daemon\\8.4\\com.healthapp-main-57:\\xml\\file_paths.xml"
+    },
+    {
+        "merged": "C:\\Users\\Harshasla\\.gradle\\daemon\\8.4\\com.healthapp-merged_res-55:\\drawable_appicon.jpg.flat",
+        "source": "C:\\Users\\Harshasla\\.gradle\\daemon\\8.4\\com.healthapp-main-57:\\drawable\\appicon.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Harshasla\\.gradle\\daemon\\8.4\\com.healthapp-merged_res-55:\\drawable_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Harshasla\\.gradle\\daemon\\8.4\\com.healthapp-main-57:\\drawable\\ic_launcher.xml"
+    },
+    {
+        "merged": "com.healthapp-merged_res-55:/drawable_appicon.png.flat",
+        "source": "com.healthapp-main-57:/drawable/appicon.png"
+    }
+]
