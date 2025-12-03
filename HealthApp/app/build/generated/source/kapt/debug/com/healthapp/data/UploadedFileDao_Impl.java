@@ -87,7 +87,8 @@ public final class UploadedFileDao_Impl implements UploadedFileDao {
   }
 
   @Override
-  public Object insert(final UploadedFileEntity file, final Continuation<? super Unit> arg1) {
+  public Object insert(final UploadedFileEntity file,
+      final Continuation<? super Unit> $completion) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -101,11 +102,11 @@ public final class UploadedFileDao_Impl implements UploadedFileDao {
           __db.endTransaction();
         }
       }
-    }, arg1);
+    }, $completion);
   }
 
   @Override
-  public Object delete(final String id, final Continuation<? super Unit> arg1) {
+  public Object delete(final String id, final Continuation<? super Unit> $completion) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -130,7 +131,7 @@ public final class UploadedFileDao_Impl implements UploadedFileDao {
           __preparedStmtOfDelete.release(_stmt);
         }
       }
-    }, arg1);
+    }, $completion);
   }
 
   @Override

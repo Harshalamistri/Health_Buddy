@@ -107,7 +107,8 @@ public final class VaccinationDao_Impl implements VaccinationDao {
   }
 
   @Override
-  public Object insert(final VaccinationEntity vaccination, final Continuation<? super Unit> arg1) {
+  public Object insert(final VaccinationEntity vaccination,
+      final Continuation<? super Unit> $completion) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -121,11 +122,11 @@ public final class VaccinationDao_Impl implements VaccinationDao {
           __db.endTransaction();
         }
       }
-    }, arg1);
+    }, $completion);
   }
 
   @Override
-  public Object delete(final String id, final Continuation<? super Unit> arg1) {
+  public Object delete(final String id, final Continuation<? super Unit> $completion) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -150,7 +151,7 @@ public final class VaccinationDao_Impl implements VaccinationDao {
           __preparedStmtOfDelete.release(_stmt);
         }
       }
-    }, arg1);
+    }, $completion);
   }
 
   @Override

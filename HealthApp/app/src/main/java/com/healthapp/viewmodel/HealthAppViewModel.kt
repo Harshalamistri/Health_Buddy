@@ -9,6 +9,7 @@ import com.healthapp.data.AppDatabaseProvider
 import com.healthapp.data.ReminderEntity
 import com.healthapp.data.UploadedFileEntity
 import com.healthapp.data.VaccinationEntity
+import com.healthapp.reminders.ReminderAlarmScheduler
 import com.healthapp.screens.Reminder
 import com.healthapp.screens.UploadedFile
 import com.healthapp.screens.Vaccination
@@ -37,6 +38,7 @@ class HealthAppViewModel(application: Application) : AndroidViewModel(applicatio
     private var uploadDao = db.uploadedFileDao()
     private var reminderDao = db.reminderDao()
     private val prefs = application.getSharedPreferences("health_prefs", Context.MODE_PRIVATE)
+    private val reminderScheduler = ReminderAlarmScheduler(application.applicationContext)
 
     private val _uploadedFiles = MutableStateFlow<List<UploadedFile>>(emptyList())
     val uploadedFiles: StateFlow<List<UploadedFile>> = _uploadedFiles
@@ -141,9 +143,11 @@ class HealthAppViewModel(application: Application) : AndroidViewModel(applicatio
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 reminderDao.insert(reminder.toEntity())
+                reminderScheduler.scheduleReminder(reminder)
             } catch (e: SQLiteException) {
                 rebuildDatabase()
                 runCatching { reminderDao.insert(reminder.toEntity()) }
+                reminderScheduler.scheduleReminder(reminder)
             }
         }
     }
@@ -151,10 +155,16 @@ class HealthAppViewModel(application: Application) : AndroidViewModel(applicatio
     fun deleteReminder(id: String) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
+                val existing = reminderDao.getAll()
+                    .firstOrNull()?.firstOrNull { it.id == id }?.toModel()
                 reminderDao.delete(id)
+                existing?.let { reminderScheduler.cancelReminder(it) }
             } catch (e: SQLiteException) {
                 rebuildDatabase()
+                val existing = reminderDao.getAll()
+                    .firstOrNull()?.firstOrNull { it.id == id }?.toModel()
                 runCatching { reminderDao.delete(id) }
+                existing?.let { reminderScheduler.cancelReminder(it) }
             }
         }
     }
@@ -164,13 +174,27 @@ class HealthAppViewModel(application: Application) : AndroidViewModel(applicatio
             try {
                 val current = reminderDao.getAll()
                     .firstOrNull()?.firstOrNull { it.id == id } ?: return@launch
-                reminderDao.update(current.copy(active = !current.active))
+                val updated = current.copy(active = !current.active)
+                reminderDao.update(updated)
+                val model = updated.toModel()
+                if (model.active) {
+                    reminderScheduler.scheduleReminder(model)
+                } else {
+                    reminderScheduler.cancelReminder(model)
+                }
             } catch (e: SQLiteException) {
                 rebuildDatabase()
                 runCatching {
                     val current = reminderDao.getAll()
                         .firstOrNull()?.firstOrNull { it.id == id } ?: return@runCatching
-                    reminderDao.update(current.copy(active = !current.active))
+                    val updated = current.copy(active = !current.active)
+                    reminderDao.update(updated)
+                    val model = updated.toModel()
+                    if (model.active) {
+                        reminderScheduler.scheduleReminder(model)
+                    } else {
+                        reminderScheduler.cancelReminder(model)
+                    }
                 }
             }
         }

@@ -175,7 +175,8 @@ public final class ReminderDao_Impl implements ReminderDao {
   }
 
   @Override
-  public Object insert(final ReminderEntity reminder, final Continuation<? super Unit> arg1) {
+  public Object insert(final ReminderEntity reminder,
+      final Continuation<? super Unit> $completion) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -189,11 +190,12 @@ public final class ReminderDao_Impl implements ReminderDao {
           __db.endTransaction();
         }
       }
-    }, arg1);
+    }, $completion);
   }
 
   @Override
-  public Object update(final ReminderEntity reminder, final Continuation<? super Unit> arg1) {
+  public Object update(final ReminderEntity reminder,
+      final Continuation<? super Unit> $completion) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -207,11 +209,11 @@ public final class ReminderDao_Impl implements ReminderDao {
           __db.endTransaction();
         }
       }
-    }, arg1);
+    }, $completion);
   }
 
   @Override
-  public Object delete(final String id, final Continuation<? super Unit> arg1) {
+  public Object delete(final String id, final Continuation<? super Unit> $completion) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -236,7 +238,7 @@ public final class ReminderDao_Impl implements ReminderDao {
           __preparedStmtOfDelete.release(_stmt);
         }
       }
-    }, arg1);
+    }, $completion);
   }
 
   @Override

@@ -151,7 +151,7 @@ fun SignUpScreen(navController: NavController, viewModel: HealthAppViewModel) {
                     Spacer(modifier = Modifier.height(24.dp))
 
                     Text(
-                        text = "Sanari",
+                        text = "Health Buddy",
                         fontSize = 26.sp,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.onSurface

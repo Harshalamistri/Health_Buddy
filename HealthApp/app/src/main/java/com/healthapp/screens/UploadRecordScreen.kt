@@ -1,8 +1,11 @@
 package com.healthapp.screens
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.database.Cursor
 import android.net.Uri
+import android.os.Environment
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
@@ -60,7 +63,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
 import androidx.navigation.NavController
+import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -132,12 +138,17 @@ fun UploadRecordScreen(
         return null
     }
 
-    fun handlePickedUri(uri: Uri) {
+    fun addFileFromUri(
+        uri: Uri,
+        explicitName: String? = null,
+        explicitType: String? = null,
+        explicitSize: Long? = null
+    ) {
         if (!checkFileLimit()) return
-        val guessedName = resolveDisplayName(uri)
+        val guessedName = explicitName ?: resolveDisplayName(uri)
         val pickedName = customName.ifBlank { guessedName ?: "Document" }
-        val mimeType = context.contentResolver.getType(uri) ?: "application/octet-stream"
-        val sizeBytes = resolveSize(uri) ?: 0L
+        val mimeType = explicitType ?: context.contentResolver.getType(uri) ?: "application/octet-stream"
+        val sizeBytes = explicitSize ?: resolveSize(uri) ?: 0L
         val newFile = UploadedFile(
             id = System.currentTimeMillis().toString() + (0..1000).random().toString(),
             name = pickedName,
@@ -153,7 +164,70 @@ fun UploadRecordScreen(
     val filePicker = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.GetContent()
     ) { uri: Uri? ->
-        uri?.let { handlePickedUri(it) }
+        uri?.let { addFileFromUri(it) }
+    }
+
+    var pendingPhotoUri by remember { mutableStateOf<Uri?>(null) }
+    var pendingPhotoFile by remember { mutableStateOf<File?>(null) }
+
+    val takePictureLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.TakePicture()
+    ) { success ->
+        val capturedUri = pendingPhotoUri
+        val capturedFile = pendingPhotoFile
+        if (success && capturedUri != null) {
+            val defaultName = capturedFile?.nameWithoutExtension ?: "Captured Photo"
+            addFileFromUri(
+                uri = capturedUri,
+                explicitName = defaultName,
+                explicitType = "image/jpeg",
+                explicitSize = capturedFile?.length()
+            )
+        } else {
+            capturedFile?.delete()
+        }
+        pendingPhotoUri = null
+        pendingPhotoFile = null
+    }
+
+    fun createImageFile(): File? {
+        return runCatching {
+            val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
+            val storageDir = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+            File.createTempFile("photo_${timeStamp}_", ".jpg", storageDir)
+        }.getOrNull()
+    }
+
+    fun launchCamera() {
+        if (!checkFileLimit()) return
+        val photoFile = createImageFile()
+        val photoUri = photoFile?.let {
+            FileProvider.getUriForFile(
+                context,
+                "${context.packageName}.provider",
+                it
+            )
+        }
+        if (photoFile != null && photoUri != null) {
+            pendingPhotoFile = photoFile
+            pendingPhotoUri = photoUri
+            takePictureLauncher.launch(photoUri)
+        }
+    }
+
+    val cameraPermissionLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.RequestPermission()
+    ) { granted ->
+        if (granted) {
+            launchCamera()
+        }
+    }
+
+    fun launchCameraWithPermission() {
+        when {
+            ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED -> launchCamera()
+            else -> cameraPermissionLauncher.launch(Manifest.permission.CAMERA)
+        }
     }
 
     fun getFileIcon(type: String): ImageVector = when {
@@ -244,7 +318,7 @@ fun UploadRecordScreen(
                 Card(
                     modifier = Modifier
                         .weight(1f)
-                        .clickable { filePicker.launch("image/*") },
+                        .clickable { launchCameraWithPermission() },
                     colors = CardDefaults.cardColors(containerColor = Color(0xFFEFF3FF)),
                     shape = RoundedCornerShape(16.dp)
                 ) {
@@ -439,37 +513,37 @@ fun UploadRecordScreen(
                                 ) {
                                     Column(modifier = Modifier.weight(1f)) {
                                         Text(file.name, fontWeight = FontWeight.Medium, color = MaterialTheme.colorScheme.onSurface)
-                                Text(file.size, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                            }
-                            Badge(
-                                containerColor = MaterialTheme.colorScheme.primaryContainer,
-                                contentColor = MaterialTheme.colorScheme.onPrimaryContainer
-                            ) { Text("Uploaded") }
-                        }
+                                        Text(file.size, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                                    }
+                                    Badge(
+                                        containerColor = MaterialTheme.colorScheme.primaryContainer,
+                                        contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+                                    ) { Text("Uploaded") }
+                                }
 
-                        Text(
-                            text = formatDate(file.uploadDate),
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            fontSize = 12.sp,
-                            modifier = Modifier.padding(vertical = 8.dp)
-                        )
+                                Text(
+                                    text = formatDate(file.uploadDate),
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                    fontSize = 12.sp,
+                                    modifier = Modifier.padding(vertical = 8.dp)
+                                )
 
-                        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                            Button(
-                                onClick = { openFile(file.url) },
-                                colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.outline),
-                                modifier = Modifier.weight(1f)
-                            ) {
-                                Icon(Icons.Default.Download, contentDescription = null, modifier = Modifier.size(14.dp))
-                                Text(text = "Open", fontSize = 12.sp, modifier = Modifier.padding(start = 4.dp))
-                            }
-                            Button(
-                                onClick = { confirmDelete(file.id) },
-                                colors = ButtonDefaults.buttonColors(
-                                    containerColor = MaterialTheme.colorScheme.errorContainer,
-                                    contentColor = MaterialTheme.colorScheme.onErrorContainer
-                                ),
-                                modifier = Modifier.weight(1f)
+                                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                                    Button(
+                                        onClick = { openFile(file.url) },
+                                        colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.outline),
+                                        modifier = Modifier.weight(1f)
+                                    ) {
+                                        Icon(Icons.Default.Download, contentDescription = null, modifier = Modifier.size(14.dp))
+                                        Text(text = "Open", fontSize = 12.sp, modifier = Modifier.padding(start = 4.dp))
+                                    }
+                                    Button(
+                                        onClick = { confirmDelete(file.id) },
+                                        colors = ButtonDefaults.buttonColors(
+                                            containerColor = MaterialTheme.colorScheme.errorContainer,
+                                            contentColor = MaterialTheme.colorScheme.onErrorContainer
+                                        ),
+                                        modifier = Modifier.weight(1f)
                                     ) {
                                         Icon(Icons.Default.Delete, contentDescription = null, modifier = Modifier.size(14.dp))
                                         Text(text = "Delete", fontSize = 12.sp, modifier = Modifier.padding(start = 4.dp))

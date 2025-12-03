@@ -35,7 +35,7 @@ fun LoginScreen(navController: NavController) {
     ) {
 
         Text(
-            text = "Sanari",
+            text = "Health Buddy",
             fontSize = 32.sp,
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.primary
