@@ -36,171 +36,196 @@
 22    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 22-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:12:5-79
 22-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:12:22-76
-23    <uses-permission android:name="android.permission.INTERNET" />
-23-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:13:5-67
-23-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:13:22-64
-24
-25    <permission
-25-->[androidx.core:core:1.12.0] C:\Users\Harshasla\.gradle\caches\transforms-3\27ad49e110844709146a48c38c841427\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
-26        android:name="com.healthapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-26-->[androidx.core:core:1.12.0] C:\Users\Harshasla\.gradle\caches\transforms-3\27ad49e110844709146a48c38c841427\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
-27        android:protectionLevel="signature" />
-27-->[androidx.core:core:1.12.0] C:\Users\Harshasla\.gradle\caches\transforms-3\27ad49e110844709146a48c38c841427\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
-28
-29    <uses-permission android:name="com.healthapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-29-->[androidx.core:core:1.12.0] C:\Users\Harshasla\.gradle\caches\transforms-3\27ad49e110844709146a48c38c841427\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
-29-->[androidx.core:core:1.12.0] C:\Users\Harshasla\.gradle\caches\transforms-3\27ad49e110844709146a48c38c841427\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
-30
-31    <application
-31-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:15:5-46:19
-32        android:allowBackup="true"
-32-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:16:9-35
-33        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-33-->[androidx.core:core:1.12.0] C:\Users\Harshasla\.gradle\caches\transforms-3\27ad49e110844709146a48c38c841427\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
-34        android:debuggable="true"
-35        android:extractNativeLibs="false"
-36        android:icon="@drawable/appicon"
-36-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:17:9-41
-37        android:label="@string/app_name"
+23    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+23-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:13:5-81
+23-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:13:22-78
+24    <uses-permission android:name="android.permission.INTERNET" />
+24-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:14:5-67
+24-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:14:22-64
+25
+26    <permission
+26-->[androidx.core:core:1.12.0] C:\Users\Harshasla\.gradle\caches\transforms-3\27ad49e110844709146a48c38c841427\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
+27        android:name="com.healthapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+27-->[androidx.core:core:1.12.0] C:\Users\Harshasla\.gradle\caches\transforms-3\27ad49e110844709146a48c38c841427\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
+28        android:protectionLevel="signature" />
+28-->[androidx.core:core:1.12.0] C:\Users\Harshasla\.gradle\caches\transforms-3\27ad49e110844709146a48c38c841427\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
+29
+30    <uses-permission android:name="com.healthapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+30-->[androidx.core:core:1.12.0] C:\Users\Harshasla\.gradle\caches\transforms-3\27ad49e110844709146a48c38c841427\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
+30-->[androidx.core:core:1.12.0] C:\Users\Harshasla\.gradle\caches\transforms-3\27ad49e110844709146a48c38c841427\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
+31
+32    <application
+32-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:16:5-60:19
+33        android:allowBackup="true"
+33-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:17:9-35
+34        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+34-->[androidx.core:core:1.12.0] C:\Users\Harshasla\.gradle\caches\transforms-3\27ad49e110844709146a48c38c841427\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
+35        android:debuggable="true"
+36        android:extractNativeLibs="false"
+37        android:icon="@drawable/appicon"
 37-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:18:9-41
-38        android:roundIcon="@drawable/appicon"
-38-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:19:9-46
-39        android:supportsRtl="true"
-39-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:20:9-35
-40        android:testOnly="true"
-41        android:theme="@style/Theme.HealthApp" >
-41-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:21:9-47
-42        <activity
-42-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:23:9-31:20
-43            android:name="com.healthapp.MainActivity"
-43-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:24:13-41
-44            android:exported="true"
-44-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:25:13-36
-45            android:theme="@style/Theme.HealthApp" >
-45-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:26:13-51
-46            <intent-filter>
-46-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:27:13-30:29
-47                <action android:name="android.intent.action.MAIN" />
-47-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:28:17-69
-47-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:28:25-66
-48
-49                <category android:name="android.intent.category.LAUNCHER" />
-49-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:29:17-77
-49-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:29:27-74
-50            </intent-filter>
-51        </activity>
-52
-53        <receiver
-53-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:33:9-35:40
-54            android:name="com.healthapp.reminders.MedicineReminderReceiver"
-54-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:34:13-63
-55            android:exported="false" />
-55-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:35:13-37
-56
-57        <provider
-58            android:name="androidx.core.content.FileProvider"
-58-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:38:13-62
-59            android:authorities="com.healthapp.provider"
-59-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:39:13-60
-60            android:exported="false"
-60-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:40:13-37
-61            android:grantUriPermissions="true" >
-61-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:41:13-47
-62            <meta-data
-62-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:42:13-44:54
-63                android:name="android.support.FILE_PROVIDER_PATHS"
-63-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:43:17-67
-64                android:resource="@xml/file_paths" />
-64-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:44:17-51
-65        </provider>
-66
-67        <activity
-67-->[androidx.compose.ui:ui-test-manifest:1.5.4] C:\Users\Harshasla\.gradle\caches\transforms-3\0a6f79f6ef8e46be7d54f91fdb3e18a4\transformed\jetified-ui-test-manifest-1.5.4\AndroidManifest.xml:23:9-25:39
-68            android:name="androidx.activity.ComponentActivity"
-68-->[androidx.compose.ui:ui-test-manifest:1.5.4] C:\Users\Harshasla\.gradle\caches\transforms-3\0a6f79f6ef8e46be7d54f91fdb3e18a4\transformed\jetified-ui-test-manifest-1.5.4\AndroidManifest.xml:24:13-63
-69            android:exported="true" />
-69-->[androidx.compose.ui:ui-test-manifest:1.5.4] C:\Users\Harshasla\.gradle\caches\transforms-3\0a6f79f6ef8e46be7d54f91fdb3e18a4\transformed\jetified-ui-test-manifest-1.5.4\AndroidManifest.xml:25:13-36
-70        <activity
-70-->[androidx.compose.ui:ui-tooling-android:1.5.4] C:\Users\Harshasla\.gradle\caches\transforms-3\319a34395982a28f3a43f300e4a10f82\transformed\jetified-ui-tooling-release\AndroidManifest.xml:23:9-25:39
-71            android:name="androidx.compose.ui.tooling.PreviewActivity"
-71-->[androidx.compose.ui:ui-tooling-android:1.5.4] C:\Users\Harshasla\.gradle\caches\transforms-3\319a34395982a28f3a43f300e4a10f82\transformed\jetified-ui-tooling-release\AndroidManifest.xml:24:13-71
-72            android:exported="true" />
-72-->[androidx.compose.ui:ui-tooling-android:1.5.4] C:\Users\Harshasla\.gradle\caches\transforms-3\319a34395982a28f3a43f300e4a10f82\transformed\jetified-ui-tooling-release\AndroidManifest.xml:25:13-36
-73
-74        <provider
-74-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Harshasla\.gradle\caches\transforms-3\50ac25e4721bae5e15e01a7d567bd718\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:24:9-32:20
-75            android:name="androidx.startup.InitializationProvider"
-75-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Harshasla\.gradle\caches\transforms-3\50ac25e4721bae5e15e01a7d567bd718\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:25:13-67
-76            android:authorities="com.healthapp.androidx-startup"
-76-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Harshasla\.gradle\caches\transforms-3\50ac25e4721bae5e15e01a7d567bd718\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:26:13-68
-77            android:exported="false" >
-77-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Harshasla\.gradle\caches\transforms-3\50ac25e4721bae5e15e01a7d567bd718\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:27:13-37
-78            <meta-data
-78-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Harshasla\.gradle\caches\transforms-3\50ac25e4721bae5e15e01a7d567bd718\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:29:13-31:52
-79                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-79-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Harshasla\.gradle\caches\transforms-3\50ac25e4721bae5e15e01a7d567bd718\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:30:17-75
-80                android:value="androidx.startup" />
-80-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Harshasla\.gradle\caches\transforms-3\50ac25e4721bae5e15e01a7d567bd718\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:31:17-49
-81            <meta-data
-81-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Harshasla\.gradle\caches\transforms-3\49e71170bc4e3fdd6c459920a8cc9329\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
-82                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-82-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Harshasla\.gradle\caches\transforms-3\49e71170bc4e3fdd6c459920a8cc9329\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
-83                android:value="androidx.startup" />
-83-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Harshasla\.gradle\caches\transforms-3\49e71170bc4e3fdd6c459920a8cc9329\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
-84            <meta-data
-84-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
-85                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-85-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
-86                android:value="androidx.startup" />
-86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
-87        </provider>
-88
-89        <service
-89-->[androidx.room:room-runtime:2.6.1] C:\Users\Harshasla\.gradle\caches\transforms-3\79f26b4e738d2e6ca281375c4a8b12a6\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
-90            android:name="androidx.room.MultiInstanceInvalidationService"
-90-->[androidx.room:room-runtime:2.6.1] C:\Users\Harshasla\.gradle\caches\transforms-3\79f26b4e738d2e6ca281375c4a8b12a6\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
-91            android:directBootAware="true"
-91-->[androidx.room:room-runtime:2.6.1] C:\Users\Harshasla\.gradle\caches\transforms-3\79f26b4e738d2e6ca281375c4a8b12a6\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
-92            android:exported="false" />
-92-->[androidx.room:room-runtime:2.6.1] C:\Users\Harshasla\.gradle\caches\transforms-3\79f26b4e738d2e6ca281375c4a8b12a6\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
-93
-94        <receiver
-94-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
-95            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-95-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
-96            android:directBootAware="false"
-96-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
-97            android:enabled="true"
-97-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
-98            android:exported="true"
-98-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
-99            android:permission="android.permission.DUMP" >
-99-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
-100            <intent-filter>
-100-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
-101                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-101-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
-101-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
-102            </intent-filter>
-103            <intent-filter>
-103-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
-104                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-104-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
-104-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
-105            </intent-filter>
-106            <intent-filter>
-106-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
-107                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-107-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
-107-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
-108            </intent-filter>
-109            <intent-filter>
-109-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
-110                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-110-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
-110-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
-111            </intent-filter>
-112        </receiver>
-113    </application>
-114
-115</manifest>
+38        android:label="@string/app_name"
+38-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:19:9-41
+39        android:roundIcon="@drawable/appicon"
+39-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:20:9-46
+40        android:supportsRtl="true"
+40-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:21:9-35
+41        android:testOnly="true"
+42        android:theme="@style/Theme.HealthApp" >
+42-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:22:9-47
+43        <activity
+43-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:24:9-32:20
+44            android:name="com.healthapp.MainActivity"
+44-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:25:13-41
+45            android:exported="true"
+45-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:26:13-36
+46            android:theme="@style/Theme.HealthApp" >
+46-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:27:13-51
+47            <intent-filter>
+47-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:28:13-31:29
+48                <action android:name="android.intent.action.MAIN" />
+48-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:29:17-69
+48-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:29:25-66
+49
+50                <category android:name="android.intent.category.LAUNCHER" />
+50-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:30:17-77
+50-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:30:27-74
+51            </intent-filter>
+52        </activity>
+53
+54        <receiver
+54-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:34:9-40:20
+55            android:name="com.healthapp.reminders.MedicineReminderReceiver"
+55-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:35:13-63
+56            android:exported="true" >
+56-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:36:13-36
+57            <intent-filter>
+57-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:37:13-39:29
+58                <action android:name="com.healthapp.reminder.ACTION_REMIND" />
+58-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:38:17-79
+58-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:38:25-76
+59            </intent-filter>
+60        </receiver>
+61        <receiver
+61-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:42:9-49:20
+62            android:name="com.healthapp.reminders.BootReceiver"
+62-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:43:13-51
+63            android:enabled="true"
+63-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:44:13-35
+64            android:exported="true" >
+64-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:45:13-36
+65            <intent-filter>
+65-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:46:13-48:29
+66                <action android:name="android.intent.action.BOOT_COMPLETED" />
+66-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:47:17-79
+66-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:47:25-76
+67            </intent-filter>
+68        </receiver>
+69
+70        <provider
+71            android:name="androidx.core.content.FileProvider"
+71-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:52:13-62
+72            android:authorities="com.healthapp.provider"
+72-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:53:13-60
+73            android:exported="false"
+73-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:54:13-37
+74            android:grantUriPermissions="true" >
+74-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:55:13-47
+75            <meta-data
+75-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:56:13-58:54
+76                android:name="android.support.FILE_PROVIDER_PATHS"
+76-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:57:17-67
+77                android:resource="@xml/file_paths" />
+77-->C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:58:17-51
+78        </provider>
+79
+80        <activity
+80-->[androidx.compose.ui:ui-test-manifest:1.5.4] C:\Users\Harshasla\.gradle\caches\transforms-3\0a6f79f6ef8e46be7d54f91fdb3e18a4\transformed\jetified-ui-test-manifest-1.5.4\AndroidManifest.xml:23:9-25:39
+81            android:name="androidx.activity.ComponentActivity"
+81-->[androidx.compose.ui:ui-test-manifest:1.5.4] C:\Users\Harshasla\.gradle\caches\transforms-3\0a6f79f6ef8e46be7d54f91fdb3e18a4\transformed\jetified-ui-test-manifest-1.5.4\AndroidManifest.xml:24:13-63
+82            android:exported="true" />
+82-->[androidx.compose.ui:ui-test-manifest:1.5.4] C:\Users\Harshasla\.gradle\caches\transforms-3\0a6f79f6ef8e46be7d54f91fdb3e18a4\transformed\jetified-ui-test-manifest-1.5.4\AndroidManifest.xml:25:13-36
+83        <activity
+83-->[androidx.compose.ui:ui-tooling-android:1.5.4] C:\Users\Harshasla\.gradle\caches\transforms-3\319a34395982a28f3a43f300e4a10f82\transformed\jetified-ui-tooling-release\AndroidManifest.xml:23:9-25:39
+84            android:name="androidx.compose.ui.tooling.PreviewActivity"
+84-->[androidx.compose.ui:ui-tooling-android:1.5.4] C:\Users\Harshasla\.gradle\caches\transforms-3\319a34395982a28f3a43f300e4a10f82\transformed\jetified-ui-tooling-release\AndroidManifest.xml:24:13-71
+85            android:exported="true" />
+85-->[androidx.compose.ui:ui-tooling-android:1.5.4] C:\Users\Harshasla\.gradle\caches\transforms-3\319a34395982a28f3a43f300e4a10f82\transformed\jetified-ui-tooling-release\AndroidManifest.xml:25:13-36
+86
+87        <provider
+87-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Harshasla\.gradle\caches\transforms-3\50ac25e4721bae5e15e01a7d567bd718\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:24:9-32:20
+88            android:name="androidx.startup.InitializationProvider"
+88-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Harshasla\.gradle\caches\transforms-3\50ac25e4721bae5e15e01a7d567bd718\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:25:13-67
+89            android:authorities="com.healthapp.androidx-startup"
+89-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Harshasla\.gradle\caches\transforms-3\50ac25e4721bae5e15e01a7d567bd718\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:26:13-68
+90            android:exported="false" >
+90-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Harshasla\.gradle\caches\transforms-3\50ac25e4721bae5e15e01a7d567bd718\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:27:13-37
+91            <meta-data
+91-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Harshasla\.gradle\caches\transforms-3\50ac25e4721bae5e15e01a7d567bd718\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:29:13-31:52
+92                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+92-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Harshasla\.gradle\caches\transforms-3\50ac25e4721bae5e15e01a7d567bd718\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:30:17-75
+93                android:value="androidx.startup" />
+93-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Harshasla\.gradle\caches\transforms-3\50ac25e4721bae5e15e01a7d567bd718\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:31:17-49
+94            <meta-data
+94-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Harshasla\.gradle\caches\transforms-3\49e71170bc4e3fdd6c459920a8cc9329\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+95                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+95-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Harshasla\.gradle\caches\transforms-3\49e71170bc4e3fdd6c459920a8cc9329\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+96                android:value="androidx.startup" />
+96-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Harshasla\.gradle\caches\transforms-3\49e71170bc4e3fdd6c459920a8cc9329\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+97            <meta-data
+97-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+98                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+98-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+99                android:value="androidx.startup" />
+99-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+100        </provider>
+101
+102        <service
+102-->[androidx.room:room-runtime:2.6.1] C:\Users\Harshasla\.gradle\caches\transforms-3\79f26b4e738d2e6ca281375c4a8b12a6\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
+103            android:name="androidx.room.MultiInstanceInvalidationService"
+103-->[androidx.room:room-runtime:2.6.1] C:\Users\Harshasla\.gradle\caches\transforms-3\79f26b4e738d2e6ca281375c4a8b12a6\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
+104            android:directBootAware="true"
+104-->[androidx.room:room-runtime:2.6.1] C:\Users\Harshasla\.gradle\caches\transforms-3\79f26b4e738d2e6ca281375c4a8b12a6\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
+105            android:exported="false" />
+105-->[androidx.room:room-runtime:2.6.1] C:\Users\Harshasla\.gradle\caches\transforms-3\79f26b4e738d2e6ca281375c4a8b12a6\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
+106
+107        <receiver
+107-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+108            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+108-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+109            android:directBootAware="false"
+109-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+110            android:enabled="true"
+110-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+111            android:exported="true"
+111-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+112            android:permission="android.permission.DUMP" >
+112-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+113            <intent-filter>
+113-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+114                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+114-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+114-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+115            </intent-filter>
+116            <intent-filter>
+116-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+117                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+117-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+117-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+118            </intent-filter>
+119            <intent-filter>
+119-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+120                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+120-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+120-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+121            </intent-filter>
+122            <intent-filter>
+122-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+123                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+123-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+123-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Harshasla\.gradle\caches\transforms-3\901175dec5bd909805a6e7b8f16ff2d8\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+124            </intent-filter>
+125        </receiver>
+126    </application>
+127
+128</manifest>

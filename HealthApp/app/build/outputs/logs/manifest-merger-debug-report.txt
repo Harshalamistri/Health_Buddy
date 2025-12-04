@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
-INJECTED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:37:9-45:20
+INJECTED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:51:9-59:20
 	android:grantUriPermissions
-		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:41:13-47
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:55:13-47
 	android:authorities
 		INJECTED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml
-		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:39:13-60
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:53:13-60
 	android:exported
-		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:40:13-37
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:54:13-37
 	android:name
-		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:38:13-62
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:52:13-62
 manifest
-ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:2:1-48:12
+ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:2:1-62:12
+INJECTED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:2:1-62:12
+INJECTED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:2:1-62:12
+INJECTED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:2:1-62:12
 MERGED from [androidx.navigation:navigation-common:2.7.5] C:\Users\Harshasla\.gradle\caches\transforms-3\af67c810e7fa71d8458f2c2ceef00e82\transformed\navigation-common-2.7.5\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-runtime:2.7.5] C:\Users\Harshasla\.gradle\caches\transforms-3\699daaa4c4419256636e7c5b3760a29f\transformed\navigation-runtime-2.7.5\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.7.5] C:\Users\Harshasla\.gradle\caches\transforms-3\d40f6c7c6f4cfa6021919fe7119bb4db\transformed\navigation-common-ktx-2.7.5\AndroidManifest.xml:2:1-7:12
@@ -112,13 +112,17 @@ uses-permission#android.permission.SCHEDULE_EXACT_ALARM
 ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:12:5-79
 	android:name
 		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:12:22-76
-uses-permission#android.permission.INTERNET
-ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:13:5-67
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:13:5-81
 	android:name
-		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:13:22-64
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:13:22-78
+uses-permission#android.permission.INTERNET
+ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:14:5-67
+	android:name
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:14:22-64
 application
-ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:15:5-46:19
-INJECTED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:15:5-46:19
+ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:16:5-60:19
+INJECTED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:16:5-60:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.5.4] C:\Users\Harshasla\.gradle\caches\transforms-3\0a6f79f6ef8e46be7d54f91fdb3e18a4\transformed\jetified-ui-test-manifest-1.5.4\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.5.4] C:\Users\Harshasla\.gradle\caches\transforms-3\0a6f79f6ef8e46be7d54f91fdb3e18a4\transformed\jetified-ui-test-manifest-1.5.4\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.5.4] C:\Users\Harshasla\.gradle\caches\transforms-3\319a34395982a28f3a43f300e4a10f82\transformed\jetified-ui-tooling-release\AndroidManifest.xml:22:5-26:19
@@ -142,49 +146,69 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Harshasla\.gradle\
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.12.0] C:\Users\Harshasla\.gradle\caches\transforms-3\27ad49e110844709146a48c38c841427\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:20:9-35
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:21:9-35
 	android:label
-		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:18:9-41
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:19:9-41
 	android:roundIcon
-		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:19:9-46
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:20:9-46
 	tools:targetApi
-		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:22:9-29
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:23:9-29
 	android:icon
-		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:17:9-41
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:18:9-41
 	android:allowBackup
-		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:16:9-35
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:17:9-35
 	android:theme
-		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:21:9-47
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:22:9-47
 activity#com.healthapp.MainActivity
-ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:23:9-31:20
+ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:24:9-32:20
 	android:exported
-		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:25:13-36
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:26:13-36
 	android:theme
-		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:26:13-51
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:27:13-51
 	android:name
-		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:24:13-41
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:25:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:27:13-30:29
+ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:28:13-31:29
 action#android.intent.action.MAIN
-ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:28:17-69
+ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:29:17-69
 	android:name
-		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:28:25-66
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:29:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:29:17-77
+ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:30:17-77
 	android:name
-		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:29:27-74
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:30:27-74
 receiver#com.healthapp.reminders.MedicineReminderReceiver
-ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:33:9-35:40
+ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:34:9-40:20
 	android:exported
-		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:35:13-37
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:36:13-36
 	android:name
-		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:34:13-63
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:35:13-63
+intent-filter#action:name:com.healthapp.reminder.ACTION_REMIND
+ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:37:13-39:29
+action#com.healthapp.reminder.ACTION_REMIND
+ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:38:17-79
+	android:name
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:38:25-76
+receiver#com.healthapp.reminders.BootReceiver
+ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:42:9-49:20
+	android:enabled
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:44:13-35
+	android:exported
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:45:13-36
+	android:name
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:43:13-51
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED
+ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:46:13-48:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:47:17-79
+	android:name
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:47:25-76
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:42:13-44:54
+ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:56:13-58:54
 	android:resource
-		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:44:17-51
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:58:17-51
 	android:name
-		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:43:17-67
+		ADDED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml:57:17-67
 uses-sdk
 INJECTED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\harshalasaneri-master\HealthApp\app\src\main\AndroidManifest.xml

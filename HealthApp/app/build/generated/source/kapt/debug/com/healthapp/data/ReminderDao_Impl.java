@@ -1,6 +1,7 @@
 package com.healthapp.data;
 
 import android.database.Cursor;
+import android.os.CancellationSignal;
 import androidx.annotation.NonNull;
 import androidx.room.CoroutinesRoom;
 import androidx.room.EntityDeletionOrUpdateAdapter;
@@ -341,6 +342,105 @@ public final class ReminderDao_Impl implements ReminderDao {
         _statement.release();
       }
     });
+  }
+
+  @Override
+  public Object getAllSuspend(final Continuation<? super List<ReminderEntity>> $completion) {
+    final String _sql = "SELECT * FROM reminders";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
+    return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<List<ReminderEntity>>() {
+      @Override
+      @NonNull
+      public List<ReminderEntity> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+          final int _cursorIndexOfMedicineName = CursorUtil.getColumnIndexOrThrow(_cursor, "medicineName");
+          final int _cursorIndexOfDosage = CursorUtil.getColumnIndexOrThrow(_cursor, "dosage");
+          final int _cursorIndexOfTimesCsv = CursorUtil.getColumnIndexOrThrow(_cursor, "timesCsv");
+          final int _cursorIndexOfPhoneNumber = CursorUtil.getColumnIndexOrThrow(_cursor, "phoneNumber");
+          final int _cursorIndexOfSendSms = CursorUtil.getColumnIndexOrThrow(_cursor, "sendSms");
+          final int _cursorIndexOfActive = CursorUtil.getColumnIndexOrThrow(_cursor, "active");
+          final int _cursorIndexOfDurationType = CursorUtil.getColumnIndexOrThrow(_cursor, "durationType");
+          final int _cursorIndexOfStartDate = CursorUtil.getColumnIndexOrThrow(_cursor, "startDate");
+          final int _cursorIndexOfEndDate = CursorUtil.getColumnIndexOrThrow(_cursor, "endDate");
+          final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
+          final List<ReminderEntity> _result = new ArrayList<ReminderEntity>(_cursor.getCount());
+          while (_cursor.moveToNext()) {
+            final ReminderEntity _item;
+            final String _tmpId;
+            if (_cursor.isNull(_cursorIndexOfId)) {
+              _tmpId = null;
+            } else {
+              _tmpId = _cursor.getString(_cursorIndexOfId);
+            }
+            final String _tmpMedicineName;
+            if (_cursor.isNull(_cursorIndexOfMedicineName)) {
+              _tmpMedicineName = null;
+            } else {
+              _tmpMedicineName = _cursor.getString(_cursorIndexOfMedicineName);
+            }
+            final String _tmpDosage;
+            if (_cursor.isNull(_cursorIndexOfDosage)) {
+              _tmpDosage = null;
+            } else {
+              _tmpDosage = _cursor.getString(_cursorIndexOfDosage);
+            }
+            final String _tmpTimesCsv;
+            if (_cursor.isNull(_cursorIndexOfTimesCsv)) {
+              _tmpTimesCsv = null;
+            } else {
+              _tmpTimesCsv = _cursor.getString(_cursorIndexOfTimesCsv);
+            }
+            final String _tmpPhoneNumber;
+            if (_cursor.isNull(_cursorIndexOfPhoneNumber)) {
+              _tmpPhoneNumber = null;
+            } else {
+              _tmpPhoneNumber = _cursor.getString(_cursorIndexOfPhoneNumber);
+            }
+            final boolean _tmpSendSms;
+            final int _tmp;
+            _tmp = _cursor.getInt(_cursorIndexOfSendSms);
+            _tmpSendSms = _tmp != 0;
+            final boolean _tmpActive;
+            final int _tmp_1;
+            _tmp_1 = _cursor.getInt(_cursorIndexOfActive);
+            _tmpActive = _tmp_1 != 0;
+            final String _tmpDurationType;
+            if (_cursor.isNull(_cursorIndexOfDurationType)) {
+              _tmpDurationType = null;
+            } else {
+              _tmpDurationType = _cursor.getString(_cursorIndexOfDurationType);
+            }
+            final String _tmpStartDate;
+            if (_cursor.isNull(_cursorIndexOfStartDate)) {
+              _tmpStartDate = null;
+            } else {
+              _tmpStartDate = _cursor.getString(_cursorIndexOfStartDate);
+            }
+            final String _tmpEndDate;
+            if (_cursor.isNull(_cursorIndexOfEndDate)) {
+              _tmpEndDate = null;
+            } else {
+              _tmpEndDate = _cursor.getString(_cursorIndexOfEndDate);
+            }
+            final String _tmpCreatedAt;
+            if (_cursor.isNull(_cursorIndexOfCreatedAt)) {
+              _tmpCreatedAt = null;
+            } else {
+              _tmpCreatedAt = _cursor.getString(_cursorIndexOfCreatedAt);
+            }
+            _item = new ReminderEntity(_tmpId,_tmpMedicineName,_tmpDosage,_tmpTimesCsv,_tmpPhoneNumber,_tmpSendSms,_tmpActive,_tmpDurationType,_tmpStartDate,_tmpEndDate,_tmpCreatedAt);
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+          _statement.release();
+        }
+      }
+    }, $completion);
   }
 
   @NonNull

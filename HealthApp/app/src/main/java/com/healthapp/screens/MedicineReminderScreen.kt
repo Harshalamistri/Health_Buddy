@@ -67,6 +67,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
+import com.healthapp.reminders.ReminderAlarmScheduler
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -563,7 +564,7 @@ private fun ReminderFormCard(
             }
             if (includeSecondary) {
                 TimePickerField(
-                    label = "Night Time",
+                    label = "PM",
                     value = timeSecondary,
                     onValueChange = onTimeSecondaryChange
                 )

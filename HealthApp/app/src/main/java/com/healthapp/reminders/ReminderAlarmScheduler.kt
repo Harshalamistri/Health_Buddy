@@ -4,6 +4,7 @@ import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import androidx.core.app.AlarmManagerCompat
 import com.healthapp.screens.Reminder
 import java.text.SimpleDateFormat
@@ -14,19 +15,25 @@ import java.util.Locale
 class ReminderAlarmScheduler(private val context: Context) {
     private val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
     private val dateFormatter = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+    private val TAG = "ReminderAlarmScheduler"
 
     fun scheduleReminder(reminder: Reminder) {
         ReminderNotificationHelper.createChannel(context)
+        Log.d(TAG, "Scheduling reminder: ${reminder.id} - ${reminder.medicineName}")
         reminder.times.forEach { time ->
             val triggerAt = nextTriggerMillis(reminder, time, System.currentTimeMillis())
             if (triggerAt != null) {
                 val pendingIntent = buildPendingIntent(reminder, time, PendingIntent.FLAG_UPDATE_CURRENT)
                 AlarmManagerCompat.setExactAndAllowWhileIdle(alarmManager, AlarmManager.RTC_WAKEUP, triggerAt, pendingIntent)
+                Log.d(TAG, "  -> Scheduled at ${Date(triggerAt)} for time $time")
+            } else {
+                Log.d(TAG, "  -> Not scheduled for time $time, as it's outside the active window.")
             }
         }
     }
 
     fun cancelReminder(reminder: Reminder) {
+        Log.d(TAG, "Cancelling reminder: ${reminder.id} - ${reminder.medicineName}")
         reminder.times.forEach { time ->
             val pi = buildPendingIntent(reminder, time, PendingIntent.FLAG_UPDATE_CURRENT)
             alarmManager.cancel(pi)
@@ -39,6 +46,9 @@ class ReminderAlarmScheduler(private val context: Context) {
         if (next != null) {
             val pendingIntent = buildPendingIntent(reminder, time, PendingIntent.FLAG_UPDATE_CURRENT)
             AlarmManagerCompat.setExactAndAllowWhileIdle(alarmManager, AlarmManager.RTC_WAKEUP, next, pendingIntent)
+            Log.d(TAG, "  -> Scheduled next occurrence at ${Date(next)} for time $time")
+        } else {
+            Log.d(TAG, "  -> Not scheduling next occurrence for time $time, as it's outside the active window.")
         }
     }
 

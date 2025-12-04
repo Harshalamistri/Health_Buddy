@@ -7,6 +7,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
+import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
@@ -18,6 +19,8 @@ import java.text.SimpleDateFormat
 import java.util.Locale
 
 class MedicineReminderReceiver : BroadcastReceiver() {
+    private val TAG = "MedicineReminderReceiver"
+
     override fun onReceive(context: Context, intent: Intent) {
         val reminderId = intent.getStringExtra("reminder_id") ?: return
         val medicineName = intent.getStringExtra("medicine_name") ?: "Medicine reminder"
@@ -26,6 +29,8 @@ class MedicineReminderReceiver : BroadcastReceiver() {
         val durationType = intent.getStringExtra("duration_type") ?: "everyday"
         val startDate = intent.getStringExtra("start_date") ?: ""
         val endDate = intent.getStringExtra("end_date") ?: ""
+
+        Log.d(TAG, "Received reminder: $reminderId - $medicineName at $time")
 
         ReminderNotificationHelper.createChannel(context)
 
@@ -53,6 +58,9 @@ class MedicineReminderReceiver : BroadcastReceiver() {
                 .build()
 
             NotificationManagerCompat.from(context).notify((reminderId + time).hashCode(), notification)
+            Log.d(TAG, "Notification shown for reminder: $reminderId")
+        } else {
+            Log.d(TAG, "Notification not shown for reminder: $reminderId - permission not granted")
         }
 
         // Schedule next occurrence for this reminder/time if still within its window
